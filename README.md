@@ -7,11 +7,11 @@
 
 ## Overview
 
-- **Language**: Python
-- **Detection Approach**: Rule-based Detection
-- **Input Format**: JSONL, key=value log
-- **Response Mode**: dry-run / live-response
-- **Storage**: local state files (JSON / JSONL)
+- **Language** : Python
+- **Detection Approach** : Rule-based Detection
+- **Input Format** : JSONL, key=value log
+- **Response Mode** : dry-run / live-response
+- **Storage** : local state files (JSON / JSONL)
 
 ### 프로젝트 목표
 이 프로젝트의 목표는 단순히 로그를 읽는 데서 끝나는 것이 아니라,  
