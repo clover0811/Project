@@ -6,7 +6,6 @@
 ---
 
 ## Overview
-
 - **Language** : Python
 - **Detection Approach** : Rule-based Detection
 - **Input Format** : JSONL, key=value log
