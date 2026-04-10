@@ -4,12 +4,12 @@
 
 ## Overview
 
-- Language: Python
-- Detection Approach: Rule-based Detection
-- Input Format: JSONL, key=value log
-- Response Mode: dry-run / live-response
-- Storage: local state files(JSON/JSONL)
-- 특징:
+- Language : Python
+- Detection Approach : Rule-based Detection
+- Input Format : JSONL, key=value log
+- Response Mode : dry-run / live-response
+- Storage : local state files(JSON/JSONL)
+- 특징
   - 형식이 다른 로그를 공통 이벤트 구조로 정규화
   - 브루트포스, 계정 탈취, 권한 상승, 데이터 반출, 내부 이동, 피싱, 로그 변조 탐지
   - MITRE ATT&CK 태그와 탐지 근거 저장
