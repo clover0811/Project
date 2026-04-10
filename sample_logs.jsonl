@@ -1,0 +1,134 @@
+{
+  "state_dir": "state",
+  "default_dry_run": true,
+  "rules": {
+    "brute_force": {
+      "enabled": true,
+      "failures": 4,
+      "window_minutes": 5
+    },
+    "suspicious_command": {
+      "enabled": true,
+      "keywords": [
+        "powershell -enc",
+        "mimikatz",
+        "certutil -urlcache",
+        "whoami /priv"
+      ],
+      "exclude_users": [
+        "it-admin"
+      ]
+    },
+    "privilege_escalation": {
+      "enabled": true,
+      "watch_actions": [
+        "sudo",
+        "role_change",
+        "privilege_granted",
+        "admin_login"
+      ],
+      "sensitive_users": [
+        "administrator",
+        "admin",
+        "root",
+        "svc-backup"
+      ]
+    },
+    "data_exfiltration": {
+      "enabled": true,
+      "bytes_threshold": 3000000,
+      "exclude_source_networks": [
+        "10.10.0.0/16"
+      ]
+    },
+    "credential_compromise": {
+      "enabled": true,
+      "failures": 3,
+      "window_minutes": 15
+    },
+    "lateral_movement": {
+      "enabled": true,
+      "unique_hosts": 3,
+      "window_minutes": 10,
+      "watch_actions": [
+        "login",
+        "remote_exec"
+      ],
+      "watch_services": [
+        "auth",
+        "ssh",
+        "winrm"
+      ],
+      "exclude_users": [
+        "svc-backup"
+      ]
+    },
+    "phishing_activity": {
+      "enabled": true,
+      "min_indicator_hits": 2,
+      "watch_services": [
+        "email",
+        "mail",
+        "mail-gateway",
+        "secure-email"
+      ],
+      "watch_actions": [
+        "phishing_report",
+        "mail_quarantine",
+        "mail_blocked",
+        "credential_submission"
+      ],
+      "verdict_values": [
+        "phish",
+        "malicious",
+        "high-confidence-phish",
+        "blocked"
+      ],
+      "keywords": [
+        "phish",
+        "credential harvest",
+        "malicious attachment",
+        "malicious link",
+        "spoofed sender"
+      ],
+      "exclude_users": [
+        "mail-sec-bot"
+      ]
+    },
+    "log_tampering": {
+      "enabled": true,
+      "keywords": [
+        "wevtutil cl",
+        "truncate /var/log",
+        "audit log stopped"
+      ]
+    }
+  },
+  "rule_state": {
+    "enabled": true,
+    "directory": "rule_state"
+  },
+  "response_control": {
+    "deduplicate_targets": true,
+    "cooldown_minutes": 60,
+    "record_response_history": true,
+    "notifications": {
+      "chatops": {
+        "enabled": false,
+        "slack_webhook_url": "",
+        "teams_webhook_url": "",
+        "timeout_seconds": 5
+      }
+    },
+    "firewall_api": {
+      "enabled": false,
+      "base_url": "",
+      "blocklist_path": "/blocklist",
+      "api_key": "",
+      "api_key_header": "Authorization",
+      "timeout_seconds": 5,
+      "ip_field": "ip",
+      "method": "POST"
+    }
+  }
+}
