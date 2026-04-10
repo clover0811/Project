@@ -1,4 +1,4 @@
-# Log-based Threat Detection & Response Automation System
+# 로그 기반 위협 탐지 및 대응 자동화 시스템
 
 로그 데이터를 입력으로 받아 보안 위협 징후를 자동으로 탐지하고, 인시던트 생성 및 대응 기록까지 수행하는 **규칙 기반 보안 자동화 프로젝트**입니다.  
 서로 다른 형식의 로그를 공통 이벤트 구조로 정규화한 뒤, 브루트포스, 계정 탈취, 권한 상승, 데이터 반출, 내부 이동, 피싱, 로그 변조 같은 주요 위협 시나리오를 탐지하고 대응 흐름까지 연결할 수 있도록 구현했습니다.
@@ -19,7 +19,7 @@
 
 ---
 
-## Key Features
+## 주요 기능
 
 ### 1. 로그 파싱 및 정규화
 - JSONL 형식 로그 파싱
@@ -73,7 +73,7 @@
 
 ---
 
-## Project Structure
+## 프로젝트 구조
 
 ```text
 .
@@ -102,7 +102,7 @@
 
 ---
 
-## How It Works
+## 동작 방식
 
 이 시스템은 아래와 같은 흐름으로 동작합니다.
 
@@ -119,7 +119,7 @@
 
 ---
 
-## Main Components
+## 주요 구성 요소
 
 ### `parser.py`
 - JSONL / key=value 로그를 파싱합니다.
@@ -144,7 +144,7 @@
 
 ---
 
-## Detection Scenarios
+## 탐지 시나리오
 
 | Scenario | Detection Meaning |
 |---|---|
@@ -176,7 +176,7 @@
 
 ---
 
-## Configuration
+## 설정
 
 `samples/detection_config.json`을 통해 다음 항목들을 조정할 수 있습니다.
 
@@ -193,7 +193,7 @@
 
 ---
 
-## Running the Project
+## 실행 방법
 
 ### 1. 설치 없이 실행
 
@@ -216,7 +216,7 @@ PYTHONPATH=src python -m log_threat_automation --input samples/sample_logs.jsonl
 
 ---
 
-## Response Modes
+## 응답 모드(대응 모드)
 
 ### `--dry-run`
 - 실제 차단/격리 대신 시뮬레이션 중심으로 동작합니다.
@@ -228,7 +228,7 @@ PYTHONPATH=src python -m log_threat_automation --input samples/sample_logs.jsonl
 
 ---
 
-## Output Files
+## 출력 파일
 
 실행 후 주요 결과는 `state/` 디렉터리에 저장됩니다.
 
@@ -269,7 +269,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Design Points
+## 설계 포인트
 
 이 프로젝트에서 특히 신경 쓴 부분은 다음과 같습니다.
 
@@ -292,7 +292,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Limitations
+## 한계점
 
 이 프로젝트는 **학습용 / 포트폴리오용 보안 자동화 프로젝트**이며, 아래와 같은 한계가 있습니다.
 
@@ -303,7 +303,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Future Improvements
+## 개선 방향
 
 향후 아래와 같은 방향으로 확장할 수 있습니다.
 
@@ -316,7 +316,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## What I Learned
+## 배운 점
 
 이 프로젝트를 통해 다음을 직접 구현하고 이해할 수 있었습니다.
 
@@ -328,7 +328,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Documents
+## 문서
 
 - `README.md` : 프로젝트 소개 및 사용 방법
 - `SYSTEM_OVERVIEW.md` : 시스템 개요
@@ -336,7 +336,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## Summary
+## 요
 
 이 프로젝트는 **로그를 자동 분석하여 보안 위협을 탐지하고, 대응과 기록까지 연결하는 규칙 기반 보안 자동화 시스템**입니다.  
 단순한 로그 분석기를 넘어, **정규화 → 탐지 → 인시던트 생성 → 대응 → 상태 저장** 흐름을 직접 구현한 포트폴리오 프로젝트라는 점에 의미가 있습니다.
