@@ -7,11 +7,11 @@
 ---
 
 ## 개요
-- **Language**: Python
-- **Detection Approach**: Rule-based Detection
-- **Input Format**: JSONL, key=value log
-- **Response Mode**: dry-run / live-response
-- **Storage**: local state files (JSON / JSONL)
+- **Language** : Python
+- **Detection Approach** : Rule-based Detection
+- **Input Format** : JSONL, key=value log
+- **Response Mode** : dry-run / live-response
+- **Storage** : local state files (JSON / JSONL)
 
 ---
 
