@@ -21,7 +21,7 @@
 
 ---
 
-### 주제 선정 이유
+### 프로젝트 선정 이유
 보안 측면에서 로그를 단순히 확인하는 것보다, 로그 안에서 이상 징후를 찾고 그 결과를 바탕으로 대응까지 이어지는 흐름이 중요하다고 생각했습니다.
 
 그래서 이 프로젝트에서는 단순 로그 출력 프로그램이 아니라,  그를 정규화하고 → 위협을 탐지하고 → 인시던트를 생성하고 → 대응 및 기록까지 남기는 과정을 직접 구현해보자는 목적으로 선정하게 되었습니다.
@@ -67,7 +67,7 @@
 - 사용자 격리
 - 계정 비활성화
 - 호스트 격리
-- ChatOps 알림 구조(Slack / Teams webhook)
+- ChatOps 알림 연동 구조(Slack / Teams webhook)
 
 ### 4. 탐지 근거와 상태 저장
 - 탐지 결과를 `incidents.jsonl`에 저장
@@ -157,14 +157,14 @@
 
 | Scenario | Detection Meaning |
 |---|---|
-| Repeated login failures | Brute Force |
-| Multiple failures followed by success | Credential Compromise |
-| Suspicious command execution | Suspicious Command |
-| Admin privilege granted / escalation activity | Privilege Escalation |
-| Large outbound transfer | Data Exfiltration |
-| Same user accessing multiple hosts quickly | Lateral Movement |
-| Phishing-related email/security events | Phishing Activity |
-| Audit/log deletion attempts | Log Tampering |
+| 반복 로그인 실패 | Brute Force |
+| 반복 실패 후 성공 | Credential Compromise |
+| 의심 명령 실행 | Suspicious Command |
+| 관리자 권한 획득 / 상승 행위 | Privilege Escalation |
+| 대량 외부 전송 | Data Exfiltration |
+| 동일 사용자의 다중 호스트 접근 | Lateral Movement |
+| 피싱 관련 이메일/보안 이벤트 | Phishing Activity |
+| 감사/로그 삭제 시도 | Log Tampering |
 
 ---
 
@@ -297,7 +297,7 @@ python -m unittest discover -s tests -v
 
 ## 한계점
 
-이 프로젝트는 실제 실무 환경에서는 바로 사용할 수 있는 완성형 보안 솔루션 수준은 아닙니다.
+이 프로젝트는 실제 실무 환경에서는 바로 사용할 수 있는 완성형 보안 솔루션이라기 보단, 로그 기반 위협 탐지와 대응 자동화 흐름을 구현해본 학습용 프로젝트에 가깝습니다.
 
 현재 일부 탐지 룰은 키워드 기반이나 임계값 기반으로 동작을 하기 때문에, 문맥을 깊게 이해하는 탐지에는 한계가 있고 일부 오탐 가능성도 남아 있습니다.
 
@@ -317,7 +317,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## 배운 점(느낀 점)
+## 배운 점
 
 이 프로젝트를 통해 가장 크게 느낀 점은 보안 로그는 한 줄씩 따로 보는 것보다 여러 이벤트를 연결해서 흐름으로 보는 것이 더 중요하다는 점이었습니다.
 
