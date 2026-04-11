@@ -225,7 +225,7 @@ PYTHONPATH=src python -m log_threat_automation --input samples/sample_logs.jsonl
 
 ---
 
-## 응답(대응) 모드
+## 대응 모드
 
 ### `--dry-run`
 - 실제 차단/격리 대신 시뮬레이션 중심으로 동작합니다.
