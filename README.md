@@ -122,7 +122,7 @@
 5. `responders.py`가 설정에 따라 대응을 실행 또는 시뮬레이션
 6. 결과와 상태를 `state/` 디렉터리에 저장
 
-즉 전체 흐름은 다음과 같습니다.
+즉, 전체 흐름은 다음과 같습니다.
 
 **Input Logs → Parsing/Normalization → Rule Evaluation → Incident Creation → Response Execution → State Persistence**
 
