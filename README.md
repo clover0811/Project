@@ -115,13 +115,13 @@
 
 ## 동작 방식
 
-1. 사용자가 로그 파일을 입력
-2. `parser.py`가 로그를 읽고 공통 이벤트 구조(`Event`)로 정규화
-3. `engine.py`가 이벤트를 각 탐지 룰에 전달
-4. `rules.py`가 위협 여부를 판단하고 `Incident`를 생성
-5. `responders.py`가 설정에 따라 대응을 실행 또는 시뮬레이션
-6. 결과와 상태를 `state/` 디렉터리에 저장
-
+1. 사용자가 로그 파일을 입력합니다.
+2. `parser.py`가 로그를 읽고 공통 이벤트 구조(`Event`)로 정규화합니다.
+3. `engine.py`가 이벤트를 각 탐지 룰에 전달합니다.
+4. `rules.py`가 위협 여부를 판단하고 `Incident`를 생성합니다.
+5. `responders.py`가 설정에 따라 대응을 실행 또는 시뮬레이션합니다.
+6. 결과와 상태를 `state/` 디렉터리에 저장합니다.
+   
 즉, 전체 흐름은 다음과 같습니다.
 
 **Input Logs → Parsing/Normalization → Rule Evaluation → Incident Creation → Response Execution → State Persistence**
