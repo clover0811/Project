@@ -168,7 +168,7 @@
 
 ---
 
-## Sample Input
+## 샘플 입력
 
 `samples/sample_logs.jsonl`에는 다음과 같은 예시 시나리오가 포함되어 있습니다.
 
@@ -225,7 +225,7 @@ PYTHONPATH=src python -m log_threat_automation --input samples/sample_logs.jsonl
 
 ---
 
-## Response Modes
+## 응답(대응) 모드
 
 ### `--dry-run`
 - 실제 차단/격리 대신 시뮬레이션 중심으로 동작합니다.
@@ -317,7 +317,7 @@ python -m unittest discover -s tests -v
 
 ---
 
-## 배운 점
+## 배운 점(느낀 점)
 
 이 프로젝트를 통해 가장 크게 느낀 점은 보안 로그는 한 줄씩 따로 보는 것보다 여러 이벤트를 연결해서 흐름으로 보는 것이 더 중요하다는 점이었습니다.
 
